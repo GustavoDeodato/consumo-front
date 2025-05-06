@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD FRONT-END</title>
+    <script src="./JS/main.js" defer type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="./IMG/logoSenai.png" alt="">
+        <input type="text" id="nomeContato" placeholder="Digite o nome do contato...">
+        <button id="novoContato">Novo Contato</button>
+    </header>
+    <main>
+        <div id="container" class="container">
+            <form>
+                <div class="preview">
+                    <input class="preview-input" id="foto" type="file" accept="image/*">
+                    <label class="preview-label" for="foto"></label>
+                    <img class="preview-image" id="preview-image" src="./img/cara.png">
+                </div>
+                <div class="input-container">
+                    <div class="input">
+                        <Label>Nome:</Label>
+                        <input type="text" class="input-text" id="Nome">
+                    </div>
+                    <div class="input">
+                        <Label>Email:</Label>
+                        <input type="text" class="input-text" id="Email">
+                    </div>
+                    <div class="input">
+                        <Label>Celular:</Label>
+                        <input type="text" class="input-text" id="Celular">
+                    </div>
+                    <div class="input">
+                        <Label>Endereço:</Label>
+                        <input type="text" class="input-text" id="Endereco">
+                    </div>
+                    <div class="input">
+                        <Label>Cidade:</Label>
+                        <input type="text" class="input-text" id="Cidade">
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="" class="" id="editar">Editar</button>
+                    <button type="" class="" id="deletar">Deletar</button>
+                    <button type="" class="" id="salvar">salvar</button>
+                    <button type="" class="" id="cancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+
+
