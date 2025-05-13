@@ -1,61 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./js/contatos.js" defer type="module"></script>
     <script src="./js/main.js" defer type="module"></script>
-    <title>Crud front-end</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<body>  
+<body>
     <header>
-        <img src="/img/image.png" alt="LOGO SENAI" >
-        <input type="text" id="nome-contato" placeholder="Digite o nome do Contato">
-        <button  class="button show"   id="novo-contato"> Novo Contato</button>
+        <img src="./img/SENAI.png" alt="Logo SENAI">
+        <input type="text" id="nome-contato" placeholder="Digite o nome do contato">
+        <button class="button show" id="novo-contato">Novo Contato</button>
     </header>
     <main class="card-show">
-       <div class="container" id="container"></div>
-       <form action="">
-        <div class="preview">
-            <input class="preview-input" id="foto"  type="file" accept="image/*">
-            <label class="preview-label" for="foto"></label>
-            <img class="preview-image"  id="preview-image" src="">
-        </div>
-        <div class="input-container">
-            <div class="input">
-                <label> Nome</label>
-                <input type="text"  class="input-text" id="nome">
+        <div class="container" id="container"></div>
+        <form>
+            <div class="preview">
+                <input class= "preview-input" id="foto" type="file" accept="image/*">
+                <label class="preview-label" for="foto"></label>
+                <img class="preview-image" id="preview-image" src="./img/plus.png" >
             </div>
-            <div class="input">
-                <label> Email</label>
-                <input type="text"  class="input-text" id="email">
+            <div class="input-container">
+                <div class="input">
+                    <label >Nome:</label>
+                    <input type="text" class="input-text" id="nome">
+                </div>
+                <div class="input">
+                    <label >E-mail:</label>
+                    <input type="text" class="input-text" id="email">
+                </div>
+                <div class="input">
+                    <label >Celular:</label>
+                    <input type="text" class="input-text" id="celular">
+                </div>
+                <div class="input">
+                    <label >Endereço:</label>
+                    <input type="text" class="input-text" id="endereco">
+                </div>
+                <div class="input">
+                    <label >Cidade:</label>
+                    <input type="text" class="input-text" id="cidade">
+                </div>
             </div>
-            <div class="input">
-                <label> Celular</label>
-                <input type="text"  class="input-text" id="Celular">
+            <div class="button-container">
+                <button type="button" class="button" id="editar">Editar</button>
+                <button type="button" class="button" id="deletar">Deletar</button>
+                <button type="button" class="button show" id="salvar">Salvar</button>
+                <button type="button" class="button show" id="cancelar">Cancelar</button>
             </div>
-            <div class="input">
-                <label>Endereco</label>
-                <input type="text"  class="input-text" id="Endereco">
-            </div>
-            <div class="input">
-                <label> Cidade</label>
-                <input type="text"  class="input-text" id="Cidade">
-            </div>
-        </div>
-        <div class="button-container">
-            <button type="button" class="button"  id="editar">Editar</button>
-            <button type="button" class="button"  id="deletar">Deletar</button>
-            <button type="button" class="button show"  id="salvar">Salvar</button>
-            <button type="button" class="button show"  id="cancelar">Cancelar</button>
-        </div>
-       </form>
+        </form>
     </main>
 </body>
 </html>
-
-
-
-
-

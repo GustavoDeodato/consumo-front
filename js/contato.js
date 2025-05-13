@@ -1,25 +1,28 @@
-'use strict'
+"use strict"
 
-export async function getContatos() {
-    const url = 'https://bakcend-fecaf-render.onrender.com/contatos/'
+export async function getContatos(){
+    const url = "https://bakcend-fecaf-render.onrender.com/contatos"
     const response = await fetch(url)
     const data = await response.json()
+
     return data
 }
 
-export async function getContatosPorNome(nome) {
+export async function getContatosPorNome(nome){
     const url = `https://bakcend-fecaf-render.onrender.com/contatos?nome_like=^${nome}`
     const response = await fetch(url)
     const data = await response.json()
+
     return data
 }
 
-export async function postContato(contato) {
-    const url = 'https://bakcend-fecaf-render.onrender.com/contatos'
+
+export async function postContatos(contato){
+    const url = "https://bakcend-fecaf-render.onrender.com/contatos"
     const options = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type' : 'application/json'
         },
         body: JSON.stringify(contato)
     }
@@ -28,12 +31,41 @@ export async function postContato(contato) {
     return response.ok
 }
 
-async function putContato(contato, id) {
+export async function uploadImageToAzure(uploadParams) {
+
+    const { file, storageAccount, sasToken, containerName } = uploadParams;
+
+    const blobName = `${Date.now()}-${file.name}`;
+
+    const baseUrl = `https://${storageAccount}.blob.core.windows.net/${containerName}/${blobName}`;
+    const uploadUrl = `${baseUrl}?${sasToken}`;
+
+    const options = {
+      method: "PUT",
+      headers: {
+        "x-ms-blob-type": "BlockBlob",
+        "Content-Type": file.type || "application/octet-stream",
+      },
+      body: file,
+    }
+
+    const response = await fetch(uploadUrl, options)
+
+    if (response.ok) {
+      return baseUrl;
+    }else {
+      return response.ok
+    }
+   
+}
+
+
+async function putContatos(contato, id) {
     const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
     const options = {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type' : 'application/json'
         },
         body: JSON.stringify(contato)
     }
@@ -42,54 +74,23 @@ async function putContato(contato, id) {
     return response.ok
 }
 
-async function deleteContato(id) {
+export async function deleteContatos(id) {
     const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
     const options = {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Content-Type' : 'application/json'
+        }
     }
     const response = await fetch(url, options)
-    return response.ok
 
+    return response.ok
 }
 
 const contato = {
-    "nome": "Jua",
-    "celular": "123 6969 9669",
-    "foto": "cara.png",
-    "email": "tangamandapio@gmail.com",
-    "endereco": "Av. Travecos, 234",
-    "cidade": "Berlim"
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "nome": "vini",
+    "celular": "69 9 5999-5999",
+    "foto": "../img/avatar.png",
+    "email": "vini@gmail.com",
+    "endereco": "carapicuiba, aterro",
+}
